@@ -19,12 +19,12 @@
 children c:
 
 -- ftd.column:
-width: fill-container
+width.fixed.px: 300
 min-height.fixed.calc: 100vh - 0px
 height.fixed.vh: 100
 padding-bottom.px: 80
 align-content: top-center
-background.solid: #FFF
+background.solid: #c7c7c7
 
 
 -- ftd.column:

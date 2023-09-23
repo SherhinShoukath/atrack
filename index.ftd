@@ -6,20 +6,19 @@
 
 -- ftd.column:
 width: fill-container
-height if {ftd.device == "desktop"}: fill-container
-height if {ftd.device == "mobile"}: auto
+height if {ftd.device == "desktop"}: hug-content
 types: 
 colors: 
 background.solid: #010C15
 
 -- ftd.column:
 width: fill-container
-height: fill-container
+height: hug-content
 
 
 -- ftd.row:
 width: fill-container
-;;height: auto
+height: auto
 padding-vertical.px: 5
 border-bottom-width.px: 1
 border-bottom-color: #1E2D3D
@@ -36,7 +35,7 @@ $hover-portfolio: false
 
 -- ftd.column:
 width: fill-container
-;;height: fill-container
+height: fill-container
 padding-horizontal.percent: 10
 spacing: space-around
 
@@ -44,20 +43,77 @@ spacing: space-around
 
 
 
-;; add here ......................
 
--- ftd.column: 
-width.fixed.percent: 23
+
+-- ftd.row:
+height: fill-container
+width.fixed.percent: 100
 border-right-width.px: 1
 
--- lib.selector:
+-- ftd.column:
+width.fixed.px: 300
+height: fill-container
+background.solid: #011221
+align-content: top-center
+spacing.fixed.px: 40
+padding-top.px: 60
 
--- lib.button: Notification Toast
-url: UI-Components/Notification/Toast
 
--- end: lib.selector
+-- ftd.text: Arduino IDE 2.2.1
+color: #00b3b3
+role: $fira-code-size-56-400
+text-align: center
+link: index.html#A1
+
+-- ftd.text: Node-RED
+color: #00b3b3
+role: $fira-code-size-56-400
+text-align: center
+link: index.html#A2
+
+-- ftd.text: LoRa
+color: #00b3b3
+role: $fira-code-size-56-400
+text-align: center
+link: index.html#A3
+
+-- ftd.text: Arduino Nano 33 BLE Sense
+color: #00b3b3
+role: $fira-code-size-56-400
+text-align: center
+link: index.html#A4
 
 -- end: ftd.column
+
+
+
+
+-- ftd.column:
+width: fill-container
+
+
+
+
+
+
+-- content-1:
+
+-- content-2:
+
+
+
+
+
+
+
+-- end: ftd.column
+
+
+
+-- end: ftd.row
+
+
+
 
 -- end: ftd.column
 
@@ -123,113 +179,218 @@ margin-right.percent: 14
 
 
 
--- component template-holder:
+-- component content-1:
 
 -- ftd.column:
 width: fill-container
-
--- ftd.row:
-if: { ftd.device == "desktop" }
-width: fill-container
-height: auto
-spacing: space-between
-
--- template:
-cover: $assets.files.assets.image1.png
-cta-button: Component Library
-text: // Use these components to build your custom websites
-link: /UI-Components/
-
--- template:
-cover: $assets.files.assets.image2.png
-cta-button: Frontend Templates
-text: // Use these templates to create landing pages
-link: components/
-
--- template:
-cover: $assets.files.assets.image3.png
-cta-button: Portfolio Templates
-text: // Build Portfolio websites hustle free using our templates
-link: components/
-
--- end: ftd.row
-
--- ftd.column:
-if: { ftd.device == "mobile" }
-
--- template:
-cover: $assets.files.assets.image1.png
-cta-button: Component Library
-text: // Use these components to build your custom websites
-link: /UI-Components/
-
--- template:
-cover: $assets.files.assets.image2.png
-cta-button: Frontend Templates
-text: // Use these templates to create landing pages
-link: components/
-
--- template:
-cover: $assets.files.assets.image3.png
-cta-button: Portfolio Templates
-text: // Build Portfolio websites hustle free using our templates
-link: components/
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: template-holder
+padding.px: 30
+id: content-1
 
 
+-- ftd.text: Arduino IDE 2.2.1
+color: #189bcc
+role: $fira-code-size-30-400
 
-
-
-
-
--- component template:
-ftd.image-src cover:
-string cta-button:
-string text:
-string link:
-
--- ftd.column:
-max-width.fixed.percent if { ftd.device == "desktop" }: 30
-min-width.fixed.percent if { ftd.device == "mobile" }: 85 
-padding.px if { ftd.device == "mobile" }: 5
-
--- ftd.column:
-padding.px: 10
-spacing: space-between
-border-radius.px: 8
-background.solid: #092A38
-link: $template.link
 
 -- ftd.image:
-src: $template.cover
-width.fixed.percent: 100
+src: $assets.files.assets.local-sketchbook.png
+margin-top.px: 20
+width: fill-container
 align-self: center
+id: A1
 
--- ftd.text: $template.cta-button
+-- ftd.text: The new major release of the Arduino IDE is faster and even more powerful! In addition to a more modern editor and a more responsive interface it features autocompletion, code navigation, and even a live debugger.
+color: #FFF
 role: $fira-code-size-16-400
-color: #FFFFFF
-padding-horizontal.px: 14
-padding-vertical.px: 10
-border-radius.px: 8
-background.solid: #1C2B3A
-;;link: $template.link
+
+-- ftd.text: For more details, please refer to the Arduino IDE 2.0 documentation.
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: Nightly builds with the latest bugfixes are available through the section below.
+color: #FFF
+role: $fira-code-size-16-400
+
+
+-- ftd.text: The Arduino IDE 2.0 is open source and its source code is hosted on GitHub.
+color: #FFF
+
+
 
 -- end: ftd.column
 
--- ftd.text: $template.text
+-- end: content-1
+
+
+
+
+
+-- component content-2:
+
+-- ftd.column:
+width: fill-container
+padding.px: 30
+id: content-2
+
+-- ftd.text: Node-RED
+color: #189bcc
+role: $fira-code-size-30-400
+padding-top.px: 200
+
+-- ftd.image:
+src: $assets.files.assets.nodered.png
+margin-top.px: 20
+width: fill-container
+align-self: center
+id: A2
+
+
+-- ftd.text: Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.
+color: #FFF
 role: $fira-code-size-16-400
-color: #607B96
-padding-horizontal.px: 8
-padding-vertical.px: 16
+
+-- ftd.text: Node-RED is a flow-based, low-code development tool for visual programming developed originally by IBM for wiring together hardware devices, APIs and online services as part of the Internet of Things.[3]
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: Node-RED provides a web browser-based flow editor, which can be used to create JavaScript functions. Elements of applications can be saved or shared for re-use. The runtime is built on Node.js. The flows created in Node-RED are stored using JSON. Since version 0.14, MQTT nodes can make properly configured TLS connections.[4]
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: In 2016, IBM contributed Node-RED as an open source OpenJS Foundation project.
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: It provides a browser-based editor that makes it easy to wire together flows using the wide range of nodes in the palette that can be deployed to its runtime in a single-click.
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: LoRa
+color: #189bcc
+role: $fira-code-size-30-400
+padding-top.px: 200
+id: lora
+
+-- ftd.image:
+src: $assets.files.assets.lora.jpg
+margin-top.px: 20
+width: fill-container
+align-self: center
+id: A3
+
+-- ftd.text: LoRa is a physical proprietary radio communication technique. It is based on spread spectrum modulation techniques derived from chirp spread spectrum technology. It was developed by Cycleo, a company of Grenoble, France, and patented in 2014.LoRa, an abbreviation for "Long Range," represents a transformative wireless communication technology designed to bridge the gap between the Internet of Things (IoT) and long-distance data transmission. This remarkable technology operates within the unlicensed radio frequency spectrum, often in the globally available Industrial, Scientific, and Medical (ISM) bands, allowing for worldwide deployment.
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: At the heart of LoRa's capabilities is its exceptional range. It can transmit data over considerable distances, extending across several kilometers, even when faced with challenging environments or signal interference. This unique characteristic makes it a game-changer for applications requiring communication over expansive geographic areas.
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: Furthermore, LoRa stands out for its incredibly low power consumption, enabling devices to operate on minimal energy. This extended battery life is a critical advantage, particularly for remote and battery-powered devices like IoT sensors.
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: Although LoRa offers a relatively modest data transfer rate compared to high-speed wireless technologies, its primary focus is to provide reliable, long-range communication while conserving power. This approach is a boon for applications prioritizing range and energy efficiency over rapid data transmission.
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: LoRa technology also boasts scalability, capable of efficiently handling a multitude of connected devices, making it an excellent fit for applications demanding the simultaneous tracking or monitoring of numerous assets. Its versatility is evident in its wide range of applications, spanning agriculture, logistics, smart cities, environmental monitoring, and industrial IoT, to name just a few.
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: With its secure communication features and open standard design, LoRa technology is a robust choice for industries and applications seeking to achieve efficient, long-distance data connectivity while maintaining security and reliability. In summary, LoRa is a transformative force in wireless communication, making it an essential player in the dynamic landscape of IoT and asset tracking solutions.
+color: #FFF
+role: $fira-code-size-16-400
+
+
+-- ftd.text: Arduino Nano 33 BLE Sense
+color: #189bcc
+role: $fira-code-size-30-400
+padding-top.px: 200
+
+-- ftd.image:
+src: $assets.files.assets.Arduino-Nano-BLE.webp
+margin-top.px: 20
+width: fill-container
+align-self: center
+id: A4
+
+-- ftd.text: The Arduino Nano 33 BLE Sense is a small development board that can connect via Bluetooth Low Energy. It has a Cortex-M4 microcontroller, motion sensors, a microphone, and sensors to detect color, proximity, temperature, humidity, and audio. 
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: The board is 45x18mm and runs at 3.3V.
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: It's a pin-equivalent substitute for the Arduino Nano, so your code will still work. However, you need to revise your original design if it's not 3.3V compatible.
+color: #FFF
+role: $fira-code-size-16-400
+
+
+-- ftd.text: TinyML, on the other hand, can be defined as a subfield of ML which pursues enabling ML applications on devices that are cheap, as well as resource- and power-constrained.
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: The objective of TinyML is to bring machine learning to the edge in an extreme way, where battery-powered, microcontroller-based embedded devices can perform ML tasks with real-time responsivity. This effort is extraordinarily multidisciplinary, requiring optimization and maximization from fields including hardware, software, data science, and machine learning. 
+color: #FFF
+role: $fira-code-size-16-400
+
+-- ftd.text: The field has largely been gaining popularity in recent years due to the maturation of the hardware and software ecosystems that underlie it.  
+color: #FFF
+role: $fira-code-size-16-400
 
 -- end: ftd.column
+-- end: content-2
 
--- end: template
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -277,7 +438,7 @@ mobile: $fira-code-size-16-mobile
 
 
 -- ftd.type fira-code-size-56-desktop:
-size.px: 56
+size.px: 36
 weight: 400
 font-family: $fira-code-assets.fonts.Fira-Code
 
