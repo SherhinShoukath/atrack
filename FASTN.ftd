@@ -6,10 +6,18 @@ favicon: /-/sherhinshoukath.github.io/atrack/favicon.ico
 -- fastn.dependency: fastn-community.github.io/doc-site as doc-site
 -- fastn.dependency: fastn-community.github.io/footer
 -- fastn.dependency: fastn-community.github.io/roboto-typography
+-- fastn.dependency: fastn-community.github.io/opensans-typography
+-- fastn.dependency: shaheen-senpai.github.io/fastn-cs-tail
+-- fastn.dependency: fastn-community.github.io/code-block as cb
+-- fastn.dependency: shaheen-senpai.github.io/fira-code
 
 -- fastn.auto-import: sherhinshoukath.github.io/atrack/FASTN/ds
 -- fastn.auto-import: sherhinshoukath.github.io/atrack/assets
+-- fastn.auto-import: sherhinshoukath.github.io/atrack/lib
 -- fastn.auto-import: doc-site
+-- fastn.auto-import: fastn-community.github.io/opensans-typography
+-- fastn.auto-import: shaheen-senpai.github.io/fastn-cs-tail
+-- fastn.auto-import: fastn-community.github.io/code-block as cb
 
 -- fastn.sitemap:
 

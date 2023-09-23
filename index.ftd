@@ -1,40 +1,315 @@
--- ds.page: Welcome to doc-site
+-- import: shaheen-senpai.github.io/fira-code/assets as fira-code-assets
+
+-- page:
+
+-- component page:
+
+-- ftd.column:
+width: fill-container
+height if {ftd.device == "desktop"}: fill-container
+height if {ftd.device == "mobile"}: auto
+types: 
+colors: 
+background.solid: #010C15
+
+-- ftd.column:
+width: fill-container
+height: fill-container
 
 
-⚡️ `doc-site` will help you create a beautiful documentation site in no time.
+-- ftd.row:
+width: fill-container
+;;height: auto
+padding-vertical.px: 5
+border-bottom-width.px: 1
+border-bottom-color: #1E2D3D
 
-It provides out-of-the-box documentation features that can be used to create any
-kind of site(personal website, blog, etc).
+-- navbar:
+$hover-home: true
+$hover-about: false
+$hover-components: false
+$hover-templates: false
+$hover-portfolio: false
 
-[Click here](https://fastn-community.github.io/doc-site/) to read doc-site
-documentation.
-
--- ds.h3: 🚀 Fast Track 
-
-Create your first fastn [web-site](https://fastn.com/expander/hello-world/-/build/) 
-project in just 5 minutes!
-
--- ds.h3: 🌟 Whats next?
-
-Create your first page. 
-[Click here to know more](https://fastn-community.github.io/doc-site/components/page/).
-
--- ds.h3: 👀 Want to learn more?
-
-Feel free to check [our expander course](https://fastn.com/expander/) or jump
-into our [FifthTry Discord server](https://discord.gg/bucrdvptYd).
+-- end: ftd.row
 
 
--- ds.h3: 🎯 Used by?
+-- ftd.column:
+width: fill-container
+;;height: fill-container
+padding-horizontal.percent: 10
+spacing: space-around
 
-Our all documentation sites uses this `doc-site` theme.
 
-- [fastn.com](https://fastn.com/home/)
-- [FifthTry.com](https://www.fifthtry.com/)
 
--- ds.h2: Learn fastn and become a pro?
 
-You are one click away, just check [our documentation](https://fastn.com/) and 
-dont forget to jump into our [FifthTry Discord server](https://discord.gg/bucrdvptYd).
 
--- end: ds.page
+;; add here ......................
+
+-- ftd.column: 
+width.fixed.percent: 23
+border-right-width.px: 1
+
+-- lib.selector:
+
+-- lib.button: Notification Toast
+url: UI-Components/Notification/Toast
+
+-- end: lib.selector
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: page
+
+
+
+
+
+
+
+
+
+-- component navbar:
+boolean $hover-home: 
+boolean $hover-about: 
+boolean $hover-components: 
+boolean $hover-templates:
+boolean $hover-portfolio: 
+boolean $show-menu: false
+
+-- ftd.row:
+width: fill-container
+height.fixed.px: 40
+spacing: space-between
+
+
+-- ftd.text: ASSET TRACKING 
+role: $fira-code-size-16-400
+color: #607B96
+css: [ $assets.files.style.logo.css]
+classes: animate-character
+align-self: center
+margin-left.percent: 10
+margin-right.percent: 14
+
+
+-- end: ftd.row
+
+
+
+-- end: navbar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component template-holder:
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.row:
+if: { ftd.device == "desktop" }
+width: fill-container
+height: auto
+spacing: space-between
+
+-- template:
+cover: $assets.files.assets.image1.png
+cta-button: Component Library
+text: // Use these components to build your custom websites
+link: /UI-Components/
+
+-- template:
+cover: $assets.files.assets.image2.png
+cta-button: Frontend Templates
+text: // Use these templates to create landing pages
+link: components/
+
+-- template:
+cover: $assets.files.assets.image3.png
+cta-button: Portfolio Templates
+text: // Build Portfolio websites hustle free using our templates
+link: components/
+
+-- end: ftd.row
+
+-- ftd.column:
+if: { ftd.device == "mobile" }
+
+-- template:
+cover: $assets.files.assets.image1.png
+cta-button: Component Library
+text: // Use these components to build your custom websites
+link: /UI-Components/
+
+-- template:
+cover: $assets.files.assets.image2.png
+cta-button: Frontend Templates
+text: // Use these templates to create landing pages
+link: components/
+
+-- template:
+cover: $assets.files.assets.image3.png
+cta-button: Portfolio Templates
+text: // Build Portfolio websites hustle free using our templates
+link: components/
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: template-holder
+
+
+
+
+
+
+
+-- component template:
+ftd.image-src cover:
+string cta-button:
+string text:
+string link:
+
+-- ftd.column:
+max-width.fixed.percent if { ftd.device == "desktop" }: 30
+min-width.fixed.percent if { ftd.device == "mobile" }: 85 
+padding.px if { ftd.device == "mobile" }: 5
+
+-- ftd.column:
+padding.px: 10
+spacing: space-between
+border-radius.px: 8
+background.solid: #092A38
+link: $template.link
+
+-- ftd.image:
+src: $template.cover
+width.fixed.percent: 100
+align-self: center
+
+-- ftd.text: $template.cta-button
+role: $fira-code-size-16-400
+color: #FFFFFF
+padding-horizontal.px: 14
+padding-vertical.px: 10
+border-radius.px: 8
+background.solid: #1C2B3A
+;;link: $template.link
+
+-- end: ftd.column
+
+-- ftd.text: $template.text
+role: $fira-code-size-16-400
+color: #607B96
+padding-horizontal.px: 8
+padding-vertical.px: 16
+
+-- end: ftd.column
+
+-- end: template
+
+
+
+
+
+
+
+
+
+-- ftd.background-image bg-blur:
+src: $assets.files.assets.Background.png
+repeat: no-repeat
+position: center-center
+size: auto
+
+
+
+
+
+
+
+
+
+-- ftd.type fira-code-size-16-desktop:
+size.px: 16
+weight: 400
+font-family: $fira-code-assets.fonts.Fira-Code
+
+
+-- ftd.type fira-code-size-16-mobile:
+size.px: 16
+weight: 400
+font-family: $fira-code-assets.fonts.Fira-Code
+
+-- ftd.responsive-type fira-code-size-16-400:
+desktop: $fira-code-size-16-desktop
+mobile: $fira-code-size-16-mobile
+
+
+
+
+
+
+
+
+
+-- ftd.type fira-code-size-56-desktop:
+size.px: 56
+weight: 400
+font-family: $fira-code-assets.fonts.Fira-Code
+
+
+-- ftd.type fira-code-size-56-mobile:
+size.px: 24
+weight: 400
+font-family: $fira-code-assets.fonts.Fira-Code
+
+-- ftd.responsive-type fira-code-size-56-400:
+desktop: $fira-code-size-56-desktop
+mobile: $fira-code-size-56-mobile
+
+
+
+
+
+
+
+
+
+-- ftd.type fira-code-size-30-desktop:
+size.px: 30
+weight: 400
+font-family: $fira-code-assets.fonts.Fira-Code
+
+
+-- ftd.type fira-code-size-30-mobile:
+size.px: 20
+weight: 400
+font-family: $fira-code-assets.fonts.Fira-Code
+
+-- ftd.responsive-type fira-code-size-30-400:
+desktop: $fira-code-size-30-desktop
+mobile: $fira-code-size-30-mobile
